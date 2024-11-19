@@ -1,5 +1,6 @@
 package com.cgvsu.rasterizationfxapp;
 
+import com.cgvsu.rasterization.objs.IntrplTriangle;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,8 +21,8 @@ public class RasterizationController {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
 
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 200, 300, 200, 100, Color.CHOCOLATE);
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 250, 250, 50, 200, Color.AQUA);
+        IntrplTriangle t1 = new IntrplTriangle(500, 300, 200, 600, 900, 450);
+        t1.paint(canvas.getGraphicsContext2D());
     }
 
 }
